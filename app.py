@@ -37,7 +37,7 @@ app.layout = html.Div([
     html.Div(
         id='result'
     )
-], style={'columnCount': 2})
+], style={'columnCount': 1})
 
 def value(items):
     return sum([objs[i]['v'] for i in items])
