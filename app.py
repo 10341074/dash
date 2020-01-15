@@ -4,7 +4,7 @@ import dash_core_components as dcc
 import dash_html_components as html
 from dash.dependencies import Input, Output
 
-external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
+external_stylesheets = ['./style.css']
 
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 
@@ -21,23 +21,40 @@ objs = {
 }
 
 app.layout = html.Div([
+    html.H1('Knapsack'),
+    html.Div(
+            className="app-header",
+            children=[
+                html.Div('Plotly Dash', className="app-header--title")
+            ]
+        ),
     dcc.Dropdown(
         id='knapsack',
         options=[
             {'label': 'v={} w={}: {}'.format(objs[k]['v'], objs[k]['w'], k) , 'value': k} for k in objs.keys()
         ],
         value=[],
-        multi=True
-    ),
-    daq.Indicator(
-        id='led',
-        color="#00cc96",
-        value=True
+        multi=True,
+        className="dcc_control"
+        # style={'display':'inline','height':'2px', 'width':'1000px'}
     ),
     html.Div(
-        id='result'
+        children =[
+                daq.Indicator(
+                    id='led',
+                    color="#00cc96",
+                    value=True,
+                    style={'display':'inline-block', 'margin-left' : '5px'}
+            ),
+            html.Div(
+                id='result',
+                style={'margin-left':'25px', 'display':'inline-block'}
+                # className='offset-by-one-third column'
+            )
+        ],
+        style={'height' : '30px', 'background-color':'hotpink'}
     )
-], style={'columnCount': 1})
+])
 
 def value(items):
     return sum([objs[i]['v'] for i in items])
