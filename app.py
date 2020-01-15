@@ -4,9 +4,9 @@ import dash_core_components as dcc
 import dash_html_components as html
 from dash.dependencies import Input, Output
 
-external_stylesheets = ['./style.css']
+# external_stylesheets = ['./style.css']
 
-app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
+app = dash.Dash(__name__)
 
 server = app.server
 objs = {
@@ -43,8 +43,8 @@ app.layout = html.Div([
                 daq.Indicator(
                     id='led',
                     color="#00cc96",
-                    value=True,
-                    style={'display':'inline-block', 'margin-left' : '5px'}
+                    value=True
+                    # style={'display':'inline-block'}
             ),
             html.Div(
                 id='result',
