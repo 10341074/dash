@@ -121,14 +121,14 @@
 
 .dcc_control {
   margin: 0;
-  padding: 5px;
+  /* padding: 5px; */
   width: calc(100%-40px);
 }
 .app-header{
   color: blue;
 }
 #led{
-  margin-left: 30px;
+  /* margin-left: 30px; */
 }
 
 /* Base Styles

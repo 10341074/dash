@@ -39,22 +39,23 @@ app.layout = html.Div([
         # style={'display':'inline','height':'2px', 'width':'1000px'}
     ),
     html.Div(
-        children =[
-                daq.Indicator(
+        [
+            daq.Indicator(
                     id='led',
                     color="#00cc96",
-                    value=True
-                    # style={'display':'inline-block'}
+                    value=True,
+                    style={'display':'inline-block', 'background-color':'blue', 'vertical-align':'middle',
+                    'transform' : 'scale(3)'}
             ),
             html.Div(
                 id='result',
-                style={'margin-left':'25px', 'display':'inline-block'}
+                style={'margin-left':'25px', 'display':'inline-block', 'background-color':'blue', 'color':'white', 'vertical-align':'middle'}
                 # className='offset-by-one-third column'
             )
         ],
-        style={'height' : '30px', 'background-color':'hotpink'}
+        style={'background-color':'hotpink', 'padding' : '30px'}
     )
-])
+], style={'display':'flex', 'flex-direction': 'column'})
 
 def value(items):
     return sum([objs[i]['v'] for i in items])
