@@ -55,7 +55,9 @@ app.layout = html.Div([
         ],
         style={'background-color':'hotpink', 'padding' : '30px'}
     )
-], style={'display':'flex', 'flex-direction': 'column'})
+], className = "four columns",
+style={'display':'flex', 'flex-direction': 'column'}
+)
 
 def value(items):
     return sum([objs[i]['v'] for i in items])
