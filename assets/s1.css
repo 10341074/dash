@@ -622,7 +622,7 @@ there.
     font-size: 11px;
   }
 }
-@media (max-width: 900px) {
+@media (max-width: 999px) {
 .pretty_container{
   background-color: #12a9a2;
 }

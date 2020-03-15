@@ -22,44 +22,48 @@ objs = {
 
 app.layout = html.Div([
     html.Div([
-    html.H1('Knapsach'),
-    html.Div(
-            className="app-header",
-            children=[
-                html.Div('Plotly Dash', className="app-header--title")
-            ]
-        ),
-    dcc.Dropdown(
-        id='knapsack',
-        options=[
-            {'label': 'v={} w={}: {}'.format(objs[k]['v'], objs[k]['w'], k) , 'value': k} for k in objs.keys()
-        ],
-        value=[],
-        multi=True,
-        className="dcc_control"
-        # style={'display':'inline','height':'2px', 'width':'1000px'}
-    ),
-    html.Div(
-        [
-            daq.Indicator(
-                    id='led',
-                    color="#00cc96",
-                    value=True,
-                    style={'display':'inline-block', 'background-color':'blue', 'vertical-align':'middle',
-                    'transform' : 'scale(3)'}
+        html.H1('Knapsach'),
+        html.Div(
+                className="app-header",
+                children=[
+                    html.Div('Plotly Dash', className="app-header--title")
+                ]
             ),
-            html.Div(
-                id='result',
-                style={'margin-left':'25px', 'display':'inline-block', 'background-color':'blue', 'color':'white', 'vertical-align':'middle'}
-                # className='offset-by-one-third column'
-            )
-        ],
-        style={'background-color':'hotpink', 'padding' : '30px'}
-    )
+        dcc.Dropdown(
+            id='knapsack',
+            options=[
+                {'label': 'v={} w={}: {}'.format(objs[k]['v'], objs[k]['w'], k) , 'value': k} for k in objs.keys()
+            ],
+            value=[],
+            multi=True,
+            className="dcc_control"
+            # style={'display':'inline','height':'2px', 'width':'1000px'}
+        ),
+        html.Div(
+            [
+                daq.Indicator(
+                        id='led',
+                        color="#00cc96",
+                        value=True,
+                        style={'display':'inline-block', 'background-color':'blue', 'vertical-align':'middle',
+                        'transform' : 'scale(3)'}
+                ),
+                html.Div(
+                    id='result',
+                    style={'margin-left':'25px', 'display':'inline-block', 'background-color':'blue', 'color':'white', 'vertical-align':'middle'}
+                    # className='offset-by-one-third column'
+                )
+            ],
+            style={'background-color':'hotpink', 'padding' : '30px'}
+        )
     ], className = "pretty_container four columns",
     style={'display':'flex', 'flex-direction': 'column'}
+    ),
+    html.Div(
+        html.H1('Knap2'),
+        className = "pretty_container seven columns"
     )
-]
+    ]
 )
 
 def value(items):
