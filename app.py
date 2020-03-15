@@ -21,6 +21,7 @@ objs = {
 }
 
 app.layout = html.Div([
+    html.Div([
     html.H1('Knapsack'),
     html.Div(
             className="app-header",
@@ -55,8 +56,10 @@ app.layout = html.Div([
         ],
         style={'background-color':'hotpink', 'padding' : '30px'}
     )
-], className = "pretty_container four columns",
-style={'display':'flex', 'flex-direction': 'column'}
+    ], className = "pretty_container four columns",
+    style={'display':'flex', 'flex-direction': 'column'}
+    )
+]
 )
 
 def value(items):
