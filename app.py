@@ -55,7 +55,7 @@ app.layout = html.Div([
         ],
         style={'background-color':'hotpink', 'padding' : '30px'}
     )
-], className = "four columns",
+], className = "pretty_container four columns",
 style={'display':'flex', 'flex-direction': 'column'}
 )
 
