@@ -623,7 +623,7 @@ there.
   }
 }
 @media (max-width: 999px) {
-.pretty_container{
+.col_container{
   background-color: #12a9a2;
 }
 }

@@ -56,14 +56,15 @@ app.layout = html.Div([
             ],
             style={'background-color':'hotpink', 'padding' : '30px'}
         )
-    ], className = "pretty_container four columns",
+    ], className = "pretty_container col_container four columns",
     style={'display':'flex', 'flex-direction': 'column'}
     ),
     html.Div(
         html.H1('Knap2'),
-        className = "pretty_container seven columns"
+        className = "pretty_container col_container eight columns"
     )
-    ]
+    ],
+    className="row flex-display",
 )
 
 def value(items):
