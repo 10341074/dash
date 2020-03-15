@@ -22,7 +22,7 @@ objs = {
 
 app.layout = html.Div([
     html.Div([
-    html.H1('Knapsack'),
+    html.H1('Knapsach'),
     html.Div(
             className="app-header",
             children=[
